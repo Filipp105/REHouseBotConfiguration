@@ -1,0 +1,59 @@
+﻿@page
+@model RE_House_Bot_Configuration.Pages.MessageTextModel
+@{
+    ViewData["Title"] = "Message Text";
+}
+
+<style>
+    .message-text-form {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .message-text-textarea {
+        width: 100%;
+        min-height: 200px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    .message-text-button {
+        background-color: #20B2AA;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .message-text-button:hover {
+            background-color: #008B8B;
+        }
+
+    .page-header {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .page-title {
+        font-size: 36px;
+        font-weight: bold;
+    }
+</style>
+
+<div class="page-header">
+    <h1 class="page-title">Message Text Page</h1>
+</div>
+
+<form method="post" class="message-text-form">
+    <textarea name="messageText" class="message-text-textarea">@Model.MessageText</textarea><br />
+    <button type="submit" class="message-text-button">Save</button>
+</form>

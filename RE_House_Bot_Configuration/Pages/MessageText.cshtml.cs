@@ -1,18 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 
 namespace RE_House_Bot_Configuration.Pages
 {
     public class MessageTextModel : PageModel
     {
-        string messageTextFilePath = "Data/message.txt";
+        private readonly IConfiguration _configuration;
+
+        public MessageTextModel(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         [BindProperty]
         public string MessageText { get; set; }
 
         public void OnGet()
         {
+            var messageTextFilePath = _configuration["FilePaths:MessageTextFilePath"];
+
             if (System.IO.File.Exists(messageTextFilePath))
             {
                 MessageText = System.IO.File.ReadAllText(messageTextFilePath);
@@ -25,6 +33,7 @@ namespace RE_House_Bot_Configuration.Pages
 
         public IActionResult OnPost()
         {
+            var messageTextFilePath = _configuration["FilePaths:MessageTextFilePath"];
             System.IO.File.WriteAllText(messageTextFilePath, MessageText);
             return RedirectToPage("./MessageText");
         }

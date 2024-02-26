@@ -1,6 +1,0 @@
-﻿namespace RE_House_Bot_Configuration.Data
-{
-    public class message
-    {
-    }
-}

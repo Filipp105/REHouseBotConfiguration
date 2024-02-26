@@ -54,6 +54,7 @@
 </div>
 
 <form method="post" class="settings-form">
+    @Html.AntiForgeryToken()
     <textarea name="settings" class="settings-textarea">@Model.Settings</textarea><br />
     <button type="submit" class="settings-button">Save</button>
 </form>

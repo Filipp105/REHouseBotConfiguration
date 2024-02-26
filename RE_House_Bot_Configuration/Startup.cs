@@ -37,9 +37,12 @@ namespace RE_House_Bot_Configuration
 
             app.UseRouting();
 
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapFallbackToPage("/index");
             });
         }
     }

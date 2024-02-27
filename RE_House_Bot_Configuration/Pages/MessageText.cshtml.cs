@@ -37,5 +37,19 @@ namespace RE_House_Bot_Configuration.Pages
             System.IO.File.WriteAllText(messageTextFilePath, MessageText);
             return RedirectToPage("./MessageText");
         }
+
+        public IActionResult OnGetText()
+        {
+            var messageTextFilePath = _configuration["FilePaths:MessageTextFilePath"];
+            if (System.IO.File.Exists(messageTextFilePath))
+            {
+                var messageText = System.IO.File.ReadAllText(messageTextFilePath);
+                return Content(messageText);
+            }
+            else
+            {
+                return Content("Message text file not found");
+            }
+        }
     }
 }

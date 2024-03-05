@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RE_House_Bot_Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f06f4830a5703d5b4e7704276c5f37f645e04f6a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RE_House_Bot_Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RE_House_Bot_Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

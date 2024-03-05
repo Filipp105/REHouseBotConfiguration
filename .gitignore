@@ -361,3 +361,4 @@ FamilyLand/FamilyLand.Web/wwwroot/img/banners/
 /RE_House_Bot_Configuration/obj/project.assets.json
 /RE_House_Bot_Configuration/obj/project.nuget.cache
 /RE_House_Bot_Configuration/obj/RE_House_Bot_Configuration.csproj.nuget.dgspec.json
+*.v2

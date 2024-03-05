@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace RE_House_Bot_Configuration
 {
@@ -43,6 +44,13 @@ namespace RE_House_Bot_Configuration
             {
                 endpoints.MapRazorPages();
                 endpoints.MapFallbackToPage("/index");
+
+                endpoints.MapGet("/message", async context =>
+                {
+                    var filePath = Path.Combine(env.ContentRootPath, "message.txt");
+                    var message = await File.ReadAllTextAsync(filePath);
+                    await context.Response.WriteAsync(message);
+                });
             });
         }
     }
